@@ -126,23 +126,34 @@
       }
 
       .logo {
-        visibility: hidden;
+        font-family: var(--font-heading);
+        font-size: clamp(1rem, 2.5vw, 1.3rem);
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: var(--text-main);
+        display: flex;
+        flex-direction: row;
+        line-height: 1.2;
+        visibility: visible;
+        align-items: center;
       }
 
-      @media all and (min-width: 960px) {
-        .logo {
-          font-family: var(--font-heading);
-          font-size: clamp(1rem, 2.5vw, 1.3rem);
-          font-weight: 700;
-          letter-spacing: 2px;
-          color: var(--text-main);
-          display: flex;
-          flex-direction: column;
-          line-height: 1.2;
-          visibility: visible;
-        }
-      } 
+      .logo img {
+          display: inline-flex;
+          margin-right: 15px;
+      }
 
+      .logo-text {
+        display: none;
+      }
+
+      @media all and (min-width: 1024px) {
+        .logo-text {
+          display: inline-flex;
+          flex-direction: column;
+        }
+      }
+      
       .logo .logo-main {
         color: var(--accent-brown);
         font-size: clamp(1.2rem, 3vw, 1.5rem);
@@ -1047,8 +1058,11 @@
     <header>
       <div class="container header-container">
         <a href="#" class="logo">
-          <span class="logo-main">Accentuating Beauty &amp; Lifestyle</span>
-          <span class="logo-subtitle">Locally in Atlanta</span>
+          <img src="logo-no-text.png" height="50" width="50" alt="Accentuating Beauty and Lifestyle">        
+          <p class="logo-text">
+            <span class="logo-main">Accentuating Beauty &amp; Lifestyle</span>
+            <span class="logo-subtitle">Locally in Atlanta</span>
+          </p>
         </a>
         <div class="header-right">
           <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
